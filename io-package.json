@@ -1,0 +1,166 @@
+{
+  "common": {
+    "name": "eebus",
+    "version": "0.1.4",
+    "news": {
+      "0.1.4": {
+        "en": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "de": "Absturz der Admin-Oberfläche durch löschbare Zertifikats-Dateiauswahlen behoben.",
+        "ru": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "pt": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "nl": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "fr": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "it": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "es": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "pl": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "uk": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
+        "zh-cn": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors."
+      },
+      "0.1.3": {
+        "en": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "de": "Kompatibilitaet des JSON-Konfigurationsschemas mit Admin 7.8 korrigiert.",
+        "ru": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "pt": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "nl": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "fr": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "it": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "es": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "pl": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "uk": "Fixed Admin 7.8 JSON configuration schema compatibility.",
+        "zh-cn": "Fixed Admin 7.8 JSON configuration schema compatibility."
+      },
+      "0.1.2": {
+        "en": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "de": "Zertifikats-Dateibrowser fuer Admin 7.8 korrigiert und Uploads im Instanz-Dateispeicher abgelegt.",
+        "ru": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "pt": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "nl": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "fr": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "it": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "es": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "pl": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "uk": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage.",
+        "zh-cn": "Fixed the certificate file browser for Admin 7.8 and backed uploads with instance file storage."
+      },
+      "0.1.1": {
+        "en": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "de": "Datei-Upload/-Download fuer Zertifikat und privaten Schluessel sowie offizielles EEBUS-Logo hinzugefuegt.",
+        "ru": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "pt": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "nl": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "fr": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "it": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "es": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "pl": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "uk": "Added certificate and private-key file upload/download fields and the official EEBUS logo.",
+        "zh-cn": "Added certificate and private-key file upload/download fields and the official EEBUS logo."
+      },
+      "0.1.0": {
+        "en": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "de": "Erste EEbus-Adapterbasis mit SHIP-TCP/TLS-Listener, Peer-Diagnose, lokaler Zertifikat-SKI-Verarbeitung und ioBroker-States.",
+        "ru": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "pt": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "nl": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "fr": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "it": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "es": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "pl": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "uk": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states.",
+        "zh-cn": "Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, local certificate SKI handling and ioBroker states."
+      }
+    },
+    "titleLang": {
+      "en": "EEbus",
+      "de": "EEbus",
+      "ru": "EEbus",
+      "pt": "EEbus",
+      "nl": "EEbus",
+      "fr": "EEbus",
+      "it": "EEbus",
+      "es": "EEbus",
+      "pl": "EEbus",
+      "uk": "EEbus",
+      "zh-cn": "EEbus"
+    },
+    "desc": {
+      "en": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "de": "EEbus-Adapterbasis fuer SHIP-Verbindungsdiagnose, lokale Pairing-Vorbereitung und spaetere SPINE-Geraeteintegration.",
+      "ru": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "pt": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "nl": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "fr": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "it": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "es": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "pl": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "uk": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
+      "zh-cn": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration."
+    },
+    "authors": ["TheBam <elektrobam@gmx.de>"],
+    "keywords": ["eebus", "ship", "spine", "energy", "smart-grid"],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "eebus.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/TheBam1990/ioBroker.eebus/main/admin/eebus.png",
+    "readme": "https://github.com/TheBam1990/ioBroker.eebus/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "protocols",
+    "tier": 3,
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.8.23"
+      }
+    ]
+  },
+  "native": {
+    "enabled": true,
+    "shipEnabled": true,
+    "shipBind": "0.0.0.0",
+    "shipPort": 4712,
+    "peerHost": "192.0.2.1",
+    "peerPort": 4712,
+    "connectTimeoutMs": 5000,
+    "pollIntervalMs": 30000,
+    "deviceBrand": "ioBroker",
+    "deviceModel": "ioBroker EEbus Adapter",
+    "deviceType": "EnergyManagementSystem",
+    "deviceSerial": "",
+    "certificatePem": "",
+    "certificateFile": "",
+    "privateKeyPem": "",
+    "privateKeyFile": "",
+    "expectedPeerSki": "",
+    "autoGenerateCertificate": true,
+    "mdnsEnabled": true,
+    "spineEnabled": false
+  },
+  "encryptedNative": ["privateKeyPem"],
+  "protectedNative": ["privateKeyPem"],
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "certificates",
+      "type": "meta",
+      "common": {
+        "name": "EEbus certificate files",
+        "type": "meta.user"
+      },
+      "native": {}
+    }
+  ]
+}

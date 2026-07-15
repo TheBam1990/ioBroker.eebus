@@ -1,0 +1,342 @@
+{
+  "type": "tabs",
+  "i18n": false,
+  "items": {
+    "main": {
+      "type": "panel",
+      "label": {
+        "en": "General",
+        "de": "Allgemein"
+      },
+      "items": {
+        "enabled": {
+          "type": "checkbox",
+          "label": {
+            "en": "Enable adapter",
+            "de": "Adapter aktivieren"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "shipEnabled": {
+          "type": "checkbox",
+          "label": {
+            "en": "Enable SHIP listener and peer check",
+            "de": "SHIP-Listener und Peer-Pruefung aktivieren"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "deviceBrand": {
+          "type": "text",
+          "label": {
+            "en": "Device brand",
+            "de": "Geraetemarke"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "deviceModel": {
+          "type": "text",
+          "label": {
+            "en": "Device model",
+            "de": "Geraetemodell"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "deviceType": {
+          "type": "select",
+          "label": {
+            "en": "EEbus device type",
+            "de": "EEbus-Geraetetyp"
+          },
+          "options": [
+            {
+              "label": "EnergyManagementSystem",
+              "value": "EnergyManagementSystem"
+            },
+            {
+              "label": "ChargingStation",
+              "value": "ChargingStation"
+            },
+            {
+              "label": "Battery",
+              "value": "Battery"
+            },
+            {
+              "label": "HeatPump",
+              "value": "HeatPump"
+            },
+            {
+              "label": "PVInverter",
+              "value": "PVInverter"
+            }
+          ],
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "deviceSerial": {
+          "type": "text",
+          "label": {
+            "en": "Device serial",
+            "de": "Geraeteseriennummer"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "pollIntervalMs": {
+          "type": "number",
+          "label": {
+            "en": "Diagnostic interval ms",
+            "de": "Diagnoseintervall ms"
+          },
+          "min": 5000,
+          "max": 3600000,
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        }
+      }
+    },
+    "ship": {
+      "type": "panel",
+      "label": {
+        "en": "SHIP",
+        "de": "SHIP"
+      },
+      "items": {
+        "shipBind": {
+          "type": "text",
+          "label": {
+            "en": "Local bind address",
+            "de": "Lokale Bind-Adresse"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "shipPort": {
+          "type": "number",
+          "label": {
+            "en": "Local SHIP port",
+            "de": "Lokaler SHIP-Port"
+          },
+          "help": {
+            "en": "EEbus SHIP commonly uses TCP/TLS port 4712.",
+            "de": "EEbus SHIP nutzt ueblicherweise TCP/TLS-Port 4712."
+          },
+          "min": 1,
+          "max": 65535,
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "peerHost": {
+          "type": "text",
+          "label": {
+            "en": "Peer host",
+            "de": "Peer-Host"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "peerPort": {
+          "type": "number",
+          "label": {
+            "en": "Peer SHIP port",
+            "de": "Peer-SHIP-Port"
+          },
+          "min": 1,
+          "max": 65535,
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "connectTimeoutMs": {
+          "type": "number",
+          "label": {
+            "en": "Connect timeout ms",
+            "de": "Verbindungs-Timeout ms"
+          },
+          "min": 1000,
+          "max": 120000,
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "expectedPeerSki": {
+          "type": "text",
+          "label": {
+            "en": "Expected peer SKI",
+            "de": "Erwartete Peer-SKI"
+          },
+          "help": {
+            "en": "Optional SHA-1 subject key identifier/fingerprint check for the peer certificate.",
+            "de": "Optionale SHA-1 Subject-Key-Identifier-/Fingerprint-Pruefung fuer das Peer-Zertifikat."
+          },
+          "xs": 12,
+          "sm": 12,
+          "md": 12,
+          "lg": 12,
+          "xl": 12
+        }
+      }
+    },
+    "certificate": {
+      "type": "panel",
+      "label": {
+        "en": "Certificate",
+        "de": "Zertifikat"
+      },
+      "items": {
+        "autoGenerateCertificate": {
+          "type": "checkbox",
+          "label": {
+            "en": "Generate local self-signed certificate if empty",
+            "de": "Lokales selbstsigniertes Zertifikat erzeugen, wenn leer"
+          },
+          "xs": 12,
+          "sm": 12,
+          "md": 12,
+          "lg": 12,
+          "xl": 12
+        },
+        "certificatePem": {
+          "type": "text",
+          "label": {
+            "en": "Certificate PEM",
+            "de": "Zertifikat PEM"
+          },
+          "minRows": 6,
+          "maxRows": 12,
+          "xs": 12,
+          "sm": 12,
+          "md": 12,
+          "lg": 12,
+          "xl": 12
+        },
+        "certificateFile": {
+          "type": "fileSelector",
+          "label": {
+            "en": "Certificate file (upload/download)",
+            "de": "Zertifikatsdatei (hoch-/herunterladen)"
+          },
+          "help": {
+            "en": "Upload a PEM/CRT/CER certificate. The uploaded file takes precedence over the manually entered PEM text.",
+            "de": "PEM-/CRT-/CER-Zertifikat hochladen. Die hochgeladene Datei hat Vorrang vor dem manuell eingegebenen PEM-Text."
+          },
+          "objectID": "eebus.%INSTANCE%.certificates",
+          "pattern": "*.*",
+          "upload": "/",
+          "refresh": true,
+          "noSize": false,
+          "xs": 12,
+          "sm": 12,
+          "md": 12,
+          "lg": 12,
+          "xl": 12
+        },
+        "privateKeyPem": {
+          "type": "text",
+          "label": {
+            "en": "Private key PEM",
+            "de": "Privater Schluessel PEM"
+          },
+          "minRows": 6,
+          "maxRows": 12,
+          "xs": 12,
+          "sm": 12,
+          "md": 12,
+          "lg": 12,
+          "xl": 12
+        },
+        "privateKeyFile": {
+          "type": "fileSelector",
+          "label": {
+            "en": "Private key file (upload/download)",
+            "de": "Private Schluesseldatei (hoch-/herunterladen)"
+          },
+          "help": {
+            "en": "Upload or select the matching unencrypted PEM/KEY private key. Protect downloads of this sensitive file.",
+            "de": "Passenden unverschluesselten privaten PEM-/KEY-Schluessel hochladen oder auswaehlen. Downloads dieser sensiblen Datei schuetzen."
+          },
+          "objectID": "eebus.%INSTANCE%.certificates",
+          "pattern": "*.*",
+          "upload": "/",
+          "refresh": true,
+          "noSize": false,
+          "xs": 12,
+          "sm": 12,
+          "md": 12,
+          "lg": 12,
+          "xl": 12
+        }
+      }
+    },
+    "advanced": {
+      "type": "panel",
+      "label": {
+        "en": "Advanced",
+        "de": "Erweitert"
+      },
+      "items": {
+        "mdnsEnabled": {
+          "type": "checkbox",
+          "label": {
+            "en": "Prepare mDNS discovery states",
+            "de": "mDNS-Discovery-States vorbereiten"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        },
+        "spineEnabled": {
+          "type": "checkbox",
+          "label": {
+            "en": "Enable SPINE placeholder states",
+            "de": "SPINE-Platzhalter-States aktivieren"
+          },
+          "xs": 12,
+          "sm": 6,
+          "md": 6,
+          "lg": 6,
+          "xl": 6
+        }
+      }
+    }
+  }
+}

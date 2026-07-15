@@ -1,0 +1,19 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "ignoreDeprecations": "6.0",
+    "strict": true,
+    "noImplicitAny": false,
+    "target": "es2022"
+  },
+  "include": ["**/*.js", "**/*.d.ts"],
+  "exclude": ["node_modules/**"]
+}
