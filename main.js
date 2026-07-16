@@ -450,15 +450,14 @@ class EebusAdapter extends utils.Adapter {
 
   startPolling() {
     this.clearPolling();
-    this.pollTimer = setInterval(() => {
+    this.pollTimer = this.setInterval(() => {
       void this.checkPeer();
     }, this.config.pollIntervalMs);
-    this.pollTimer.unref();
   }
 
   clearPolling() {
     if (this.pollTimer) {
-      clearInterval(this.pollTimer);
+      this.clearInterval(this.pollTimer);
       this.pollTimer = null;
     }
   }

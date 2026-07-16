@@ -48,6 +48,12 @@ The private key configured as PEM text is stored as an encrypted and protected n
 - Fixed the Admin UI crash caused by delete-enabled certificate file selectors.
 - Prepared package metadata, tests and automation for an official ioBroker repository review.
 
+### 0.1.0
+
+- Initial EEbus adapter foundation with SHIP TCP/TLS listener, peer diagnostics, certificate SKI handling and ioBroker states.
+
+Older release notes are archived in [CHANGELOG_OLD.md](CHANGELOG_OLD.md).
+
 ## License
 
 Copyright (c) 2026 TheBam

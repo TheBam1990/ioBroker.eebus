@@ -1,9 +1,0 @@
-.github/
-.vscode/
-test/
-*.tgz
-coverage/
-tsconfig*.json
-eslint.config.mjs
-prettier.config.mjs
-
