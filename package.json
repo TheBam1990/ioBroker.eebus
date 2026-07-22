@@ -36,7 +36,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.4.1",
+    "@iobroker/adapter-core": "^3.4.2",
     "selfsigned": "^5.5.0"
   },
   "devDependencies": {
