@@ -1,8 +1,16 @@
 {
   "common": {
     "name": "eebus",
-    "version": "0.1.4",
+    "version": "0.2.1",
     "news": {
+      "0.2.1": {
+        "en": "Added live SKI display and pairing controls to adapter settings.",
+        "de": "SKI-Anzeige und Pairing-Steuerung direkt in den Adaptereinstellungen ergaenzt."
+      },
+      "0.2.0": {
+        "en": "Added SHIP/SPINE networking, persistent SKI identity, trusted pairing and LPC/LPP/MPC use cases.",
+        "de": "SHIP/SPINE-Kommunikation, dauerhafte SKI-Identitaet, bestaetigtes Pairing und LPC/LPP/MPC ergaenzt."
+      },
       "0.1.4": {
         "en": "Fixed the Admin UI crash caused by delete-enabled certificate file selectors.",
         "de": "Absturz der Admin-Oberfläche durch löschbare Zertifikats-Dateiauswahlen behoben.",
@@ -44,8 +52,8 @@
       "zh-cn": "EEbus"
     },
     "desc": {
-      "en": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
-      "de": "EEbus-Adapterbasis fuer SHIP-Verbindungsdiagnose, lokale Pairing-Vorbereitung und spaetere SPINE-Geraeteintegration.",
+      "en": "EEBUS SHIP/SPINE participant with LPC, LPP and MPC",
+      "de": "EEBUS SHIP/SPINE-Teilnehmer mit LPC, LPP und MPC",
       "ru": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
       "pt": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
       "nl": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
@@ -56,8 +64,16 @@
       "uk": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration.",
       "zh-cn": "EEbus adapter foundation for SHIP connectivity diagnostics, local pairing preparation and future SPINE device integration."
     },
-    "authors": ["TheBam <elektrobam@gmx.de>"],
-    "keywords": ["eebus", "ship", "spine", "energy", "smart-grid"],
+    "authors": [
+      "TheBam <elektrobam@gmx.de>"
+    ],
+    "keywords": [
+      "eebus",
+      "ship",
+      "spine",
+      "energy",
+      "smart-grid"
+    ],
     "licenseInformation": {
       "type": "free",
       "license": "MIT"
@@ -93,7 +109,7 @@
     "shipEnabled": true,
     "shipBind": "0.0.0.0",
     "shipPort": 4712,
-    "peerHost": "192.0.2.1",
+    "peerHost": "",
     "peerPort": 4712,
     "connectTimeoutMs": 5000,
     "pollIntervalMs": 30000,
@@ -108,10 +124,21 @@
     "expectedPeerSki": "",
     "autoGenerateCertificate": true,
     "mdnsEnabled": true,
-    "spineEnabled": false
+    "spineEnabled": true,
+    "simulation": true,
+    "initialPowerW": 6000,
+    "nominalConsumptionW": 11000,
+    "nominalProductionW": 10000,
+    "discoveryInterfaces": ""
   },
-  "encryptedNative": ["privateKeyPem", "privateKeyFile"],
-  "protectedNative": ["privateKeyPem", "privateKeyFile"],
+  "encryptedNative": [
+    "privateKeyPem",
+    "privateKeyFile"
+  ],
+  "protectedNative": [
+    "privateKeyPem",
+    "privateKeyFile"
+  ],
   "objects": [],
   "instanceObjects": [
     {

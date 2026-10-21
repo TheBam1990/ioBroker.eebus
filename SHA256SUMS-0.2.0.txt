@@ -1,0 +1,1 @@
+72a4c545f411a9b4b7e347916f68023bbf1fe9e24be2f5300790f77aac6d4fda  iobroker.eebus-0.2.0.tgz

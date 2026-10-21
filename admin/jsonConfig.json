@@ -2,6 +2,95 @@
   "type": "tabs",
   "i18n": true,
   "items": {
+    "pairing": {
+      "type": "panel",
+      "label": "Pairing / SKI",
+      "items": {
+        "_localSki": {
+          "type": "state",
+          "oid": "info.localSki",
+          "label": "Local adapter SKI (copy into the tool)",
+          "control": "input",
+          "readOnly": true,
+          "xs": 12
+        },
+        "_connection": {
+          "type": "state",
+          "oid": "info.connection",
+          "label": "EEBUS connection",
+          "control": "text",
+          "readOnly": true,
+          "xs": 12,
+          "trueText": "Connected",
+          "falseText": "Disconnected"
+        },
+        "_pairingWindow": {
+          "type": "state",
+          "oid": "pairing.windowOpen",
+          "label": "Pairing window",
+          "control": "text",
+          "readOnly": true,
+          "xs": 12,
+          "trueText": "Open",
+          "falseText": "Closed"
+        },
+        "_openPairing": {
+          "type": "state",
+          "oid": "control.openPairing",
+          "label": "Open pairing window (120 seconds)",
+          "control": "button",
+          "readOnly": false,
+          "xs": 12,
+          "falseText": "Open pairing window (120 seconds)"
+        },
+        "_remoteSki": {
+          "type": "state",
+          "oid": "pairing.peerSki",
+          "label": "Remote device SKI",
+          "control": "input",
+          "readOnly": false,
+          "xs": 12
+        },
+        "_trustPeer": {
+          "type": "state",
+          "oid": "control.trustCurrentPeer",
+          "label": "Trust selected device and connect",
+          "control": "button",
+          "readOnly": false,
+          "xs": 12,
+          "falseText": "Trust selected device and connect"
+        },
+        "_pairingInstructions": {
+          "type": "staticText",
+          "text": "Copy the local SKI into the Handwerkertool. Open pairing, select ioBroker in the tool, enter the tool SKI below and confirm trust on both sides. An existing pairing remains stored after disconnecting.",
+          "xs": 12
+        },
+        "_discovered": {
+          "type": "state",
+          "oid": "discovery.peersJson",
+          "label": "Discovered EEBUS devices",
+          "control": "text",
+          "readOnly": true,
+          "xs": 12
+        },
+        "_pairingState": {
+          "type": "state",
+          "oid": "pairing.stateJson",
+          "label": "Pairing status",
+          "control": "text",
+          "readOnly": true,
+          "xs": 12
+        },
+        "_lastError": {
+          "type": "state",
+          "oid": "diagnostics.lastError",
+          "label": "Last error",
+          "control": "text",
+          "readOnly": true,
+          "xs": 12
+        }
+      }
+    },
     "main": {
       "type": "panel",
       "label": "General",
@@ -17,7 +106,7 @@
         },
         "shipEnabled": {
           "type": "checkbox",
-          "label": "Enable SHIP listener and peer check",
+          "label": "Enable EEBUS SHIP and SPINE",
           "xs": 12,
           "sm": 6,
           "md": 6,
@@ -42,51 +131,9 @@
           "lg": 6,
           "xl": 6
         },
-        "deviceType": {
-          "type": "select",
-          "label": "EEbus device type",
-          "options": [
-            {
-              "label": "EnergyManagementSystem",
-              "value": "EnergyManagementSystem"
-            },
-            {
-              "label": "ChargingStation",
-              "value": "ChargingStation"
-            },
-            {
-              "label": "Battery",
-              "value": "Battery"
-            },
-            {
-              "label": "HeatPump",
-              "value": "HeatPump"
-            },
-            {
-              "label": "PVInverter",
-              "value": "PVInverter"
-            }
-          ],
-          "xs": 12,
-          "sm": 6,
-          "md": 6,
-          "lg": 6,
-          "xl": 6
-        },
         "deviceSerial": {
           "type": "text",
           "label": "Device serial",
-          "xs": 12,
-          "sm": 6,
-          "md": 6,
-          "lg": 6,
-          "xl": 6
-        },
-        "pollIntervalMs": {
-          "type": "number",
-          "label": "Diagnostic interval ms",
-          "min": 5000,
-          "max": 3600000,
           "xs": 12,
           "sm": 6,
           "md": 6,
@@ -120,46 +167,11 @@
           "lg": 6,
           "xl": 6
         },
-        "peerHost": {
+        "discoveryInterfaces": {
           "type": "text",
-          "label": "Peer host",
+          "label": "Network interfaces (comma separated, empty = automatic)",
           "xs": 12,
-          "sm": 6,
-          "md": 6,
-          "lg": 6,
-          "xl": 6
-        },
-        "peerPort": {
-          "type": "number",
-          "label": "Peer SHIP port",
-          "min": 1,
-          "max": 65535,
-          "xs": 12,
-          "sm": 6,
-          "md": 6,
-          "lg": 6,
-          "xl": 6
-        },
-        "connectTimeoutMs": {
-          "type": "number",
-          "label": "Connect timeout ms",
-          "min": 1000,
-          "max": 120000,
-          "xs": 12,
-          "sm": 6,
-          "md": 6,
-          "lg": 6,
-          "xl": 6
-        },
-        "expectedPeerSki": {
-          "type": "text",
-          "label": "Expected peer SKI",
-          "help": "Optional SHA-1 subject key identifier/fingerprint check for the peer certificate.",
-          "xs": 12,
-          "sm": 12,
-          "md": 12,
-          "lg": 12,
-          "xl": 12
+          "help": "Use OS interface names such as eth0. Discovery and SHIP use the selected interfaces."
         }
       }
     },
@@ -230,27 +242,37 @@
         }
       }
     },
-    "advanced": {
+    "useCases": {
       "type": "panel",
-      "label": "Advanced",
+      "label": "LPC / LPP / MPC",
       "items": {
-        "mdnsEnabled": {
+        "simulation": {
           "type": "checkbox",
-          "label": "Prepare mDNS discovery states",
-          "xs": 12,
-          "sm": 6,
-          "md": 6,
-          "lg": 6,
-          "xl": 6
+          "label": "Simulate power response to received limits (no physical device control)",
+          "xs": 12
         },
-        "spineEnabled": {
-          "type": "checkbox",
-          "label": "Enable SPINE placeholder states",
-          "xs": 12,
-          "sm": 6,
-          "md": 6,
-          "lg": 6,
-          "xl": 6
+        "initialPowerW": {
+          "type": "number",
+          "label": "Initial input power in W (+consumption, -production)",
+          "xs": 12
+        },
+        "nominalConsumptionW": {
+          "type": "number",
+          "label": "Nominal maximum consumption in W",
+          "min": 1,
+          "xs": 6
+        },
+        "nominalProductionW": {
+          "type": "number",
+          "label": "Nominal maximum production in W",
+          "min": 1,
+          "xs": 6
+        },
+        "instructions": {
+          "type": "staticText",
+          "text": "Pair via Objects: open control.openPairing, enter the remote SKI into pairing.peerSki and press control.trustCurrentPeer. Local SKI: info.localSki. Discovered devices: discovery.peersJson. MPC input: measurements.inputPowerW. Received limits: lpc / lpp.",
+          "newLine": true,
+          "xs": 12
         }
       }
     }

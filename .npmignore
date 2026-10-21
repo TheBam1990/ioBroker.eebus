@@ -1,0 +1,4 @@
+node_modules/
+test/
+bridge/cmd/
+bridge/*_test.go

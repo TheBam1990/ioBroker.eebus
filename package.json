@@ -1,7 +1,7 @@
 {
   "name": "iobroker.eebus",
-  "version": "0.1.4",
-  "description": "ioBroker adapter foundation for EEbus SHIP diagnostics and local pairing preparation",
+  "version": "0.2.1",
+  "description": "EEBUS SHIP/SPINE participant with LPC, LPP and MPC",
   "author": "TheBam <elektrobam@gmx.de>",
   "homepage": "https://github.com/TheBam1990/ioBroker.eebus",
   "license": "MIT",
@@ -12,7 +12,15 @@
     "LICENSE",
     "main.js",
     "README.md",
-    "README.de.md"
+    "README.de.md",
+    "lib",
+    "bin",
+    "NOTICE",
+    "scripts",
+    "licenses",
+    "bridge/*.go",
+    "bridge/go.mod",
+    "bridge/go.sum"
   ],
   "os": [
     "linux",
@@ -36,8 +44,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.4.1",
-    "selfsigned": "^5.5.0"
+    "@iobroker/adapter-core": "^3.4.1"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^5.2.1",
@@ -52,12 +59,16 @@
   },
   "scripts": {
     "start": "node main.js",
-    "test": "npm run test:package",
+    "test": "npm run test:unit && npm run test:package",
     "lint": "eslint .",
     "check": "tsc --noEmit -p tsconfig.check.json",
     "test:package": "mocha test/package.js --exit",
     "test:integration": "mocha test/integration.js --exit",
-    "release": "release-script"
+    "release": "release-script",
+    "test:unit": "node --test test/helpers.test.js",
+    "build:bridge": "node scripts/build-bridge.js",
+    "build": "node scripts/build-bridge.js",
+    "build:all": "node scripts/build-bridge.js --all"
   },
   "bugs": {
     "url": "https://github.com/TheBam1990/ioBroker.eebus/issues"

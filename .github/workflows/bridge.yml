@@ -1,0 +1,30 @@
+name: EEBUS protocol bridge
+on:
+  push:
+  pull_request:
+jobs:
+  protocol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: bridge/go.mod
+          cache-dependency-path: bridge/go.sum
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build:bridge
+      - run: npm run check && npm run lint && npm test
+      - run: go test -race ./...
+        working-directory: bridge
+      - run: go build -o /tmp/eebus-test-peer ./cmd/test-peer
+        working-directory: bridge
+      - run: python3 test/network.py
+      - run: npm run build:all
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eebus-native-processes
+          path: bin/
